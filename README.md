@@ -137,7 +137,7 @@ reeval_result = reevaluate_batch(outputs_root="outputs")
 reeval_result["summary"]
 ```
 
-### 6. 업로드용 결과 묶음 생성
+### 6. 결과 묶음 생성
 ```python
 from experiment import export_results_bundle
 
