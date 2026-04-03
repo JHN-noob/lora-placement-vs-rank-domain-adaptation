@@ -1,0 +1,81 @@
+{
+  "experiment": {
+    "name": "pilot_rank_placement",
+    "seed": 42,
+    "run_type": "adapter",
+    "placement": "upper",
+    "rank": 4
+  },
+  "model": {
+    "name": "Qwen/Qwen2.5-3B-Instruct",
+    "fallback_name": "meta-llama/Llama-3.2-3B-Instruct",
+    "target_modules": ["q_proj", "v_proj"],
+    "layer_pattern": "layers",
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "max_seq_len": 768
+  },
+  "data": {
+    "domain": {
+      "name": "keboola_docs",
+      "path": "Keboola/Developer-Documentation-QA",
+      "group_by_field": "filename",
+      "split_seed": 42,
+      "split_ratio": [0.8, 0.1, 0.1],
+      "context_strategy": "keboola_docs_by_filename",
+      "context_base_url": "https://developers.keboola.com",
+      "context_cache_path": "outputs/cache/keboola_context_cache.json",
+      "context_cache_version": "v2_h1_article_body",
+      "prepared_snapshot_path": "outputs/cache/keboola_domain_snapshot.json",
+      "prepared_snapshot_version": "v2_context_clean",
+      "prefer_prepared_snapshot": true,
+      "context_fetch_timeout_seconds": 30,
+      "context_fetch_workers": 8,
+      "context_max_chars": 5000,
+      "context_fit_max_tokens": 384,
+      "answer_token_reserve": 128,
+      "min_context_chars": 80,
+      "min_context_body_lines": 1
+    },
+    "general": {
+      "boolq": {
+        "path": "google/boolq",
+        "split": "validation"
+      },
+      "piqa": {
+        "path": "ybisk/piqa",
+        "split": "validation"
+      },
+      "wikitext": {
+        "path": "Salesforce/wikitext",
+        "config_name": "wikitext-2-raw-v1",
+        "split": "validation"
+      }
+    }
+  },
+  "training": {
+    "epochs": 3,
+    "per_device_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "learning_rate": 0.0002,
+    "scheduler_type": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "gradient_checkpointing": true,
+    "save_checkpoint": true,
+    "save_validation_predictions": false,
+    "save_tokenizer_with_checkpoint": false
+  },
+  "evaluation": {
+    "generation_max_new_tokens": 96,
+    "generation_batch_size": 1,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "outputs": {
+    "root": "outputs",
+    "runs_dir": "outputs/runs",
+    "summary_dir": "outputs/summary"
+  }
+}

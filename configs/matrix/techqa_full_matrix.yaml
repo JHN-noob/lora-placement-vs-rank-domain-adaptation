@@ -1,0 +1,76 @@
+{
+  "base_config_path": "configs/techqa.yaml",
+  "runs": [
+    {
+      "experiment": {
+        "run_type": "base",
+        "placement": "all",
+        "rank": 0,
+        "run_name": "techqa_base"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "lower",
+        "rank": 4,
+        "run_name": "techqa_lower_r4_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "lower",
+        "rank": 8,
+        "run_name": "techqa_lower_r8_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "lower",
+        "rank": 16,
+        "run_name": "techqa_lower_r16_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "upper",
+        "rank": 4,
+        "run_name": "techqa_upper_r4_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "upper",
+        "rank": 8,
+        "run_name": "techqa_upper_r8_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "upper",
+        "rank": 16,
+        "run_name": "techqa_upper_r16_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "all",
+        "rank": 4,
+        "run_name": "techqa_all_r4_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "all",
+        "rank": 8,
+        "run_name": "techqa_all_r8_seed42"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "all",
+        "rank": 16,
+        "run_name": "techqa_all_r16_seed42"
+      }
+    }
+  ]
+}

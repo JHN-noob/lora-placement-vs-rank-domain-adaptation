@@ -1,0 +1,67 @@
+{
+  "base_config_path": "configs/pilot.yaml",
+  "runs": [
+    {
+      "experiment": {
+        "run_type": "base",
+        "placement": "all",
+        "rank": 0,
+        "run_name": "base"
+      }
+    },
+    {
+      "experiment": {
+        "placement": "lower",
+        "rank": 4
+      }
+    },
+    {
+      "experiment": {
+        "placement": "lower",
+        "rank": 8
+      }
+    },
+    {
+      "experiment": {
+        "placement": "lower",
+        "rank": 16
+      }
+    },
+    {
+      "experiment": {
+        "placement": "upper",
+        "rank": 4
+      }
+    },
+    {
+      "experiment": {
+        "placement": "upper",
+        "rank": 8
+      }
+    },
+    {
+      "experiment": {
+        "placement": "upper",
+        "rank": 16
+      }
+    },
+    {
+      "experiment": {
+        "placement": "all",
+        "rank": 4
+      }
+    },
+    {
+      "experiment": {
+        "placement": "all",
+        "rank": 8
+      }
+    },
+    {
+      "experiment": {
+        "placement": "all",
+        "rank": 16
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+domain_name,rank,run_count,mean_forgetting_acc_weighted,mean_forgetting_ppl
+keboola_docs,4,3,0.000653,-0.147308
+keboola_docs,8,3,0.006526,-0.154217
+keboola_docs,16,3,0.009854,-0.147212
+techqa,4,3,-0.00881,-0.101502
+techqa,8,3,-0.012007,-0.136799
+techqa,16,3,-0.00261,-0.192442

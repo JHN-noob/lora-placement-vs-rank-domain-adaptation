@@ -1,0 +1,7 @@
+domain_name,placement,run_count,mean_domain_f1,mean_adaptation_gain,mean_forgetting_acc_weighted,mean_composite_score
+keboola_docs,all,3,0.519166,0.179777,0.010115,0.783184
+keboola_docs,lower,3,0.50612,0.166731,0.010572,0.425446
+keboola_docs,upper,3,0.496839,0.15745,-0.003654,0.411662
+techqa,all,3,0.249538,0.048816,-0.01788,0.62767
+techqa,lower,3,0.234134,0.033411,-0.018076,0.488573
+techqa,upper,3,0.199267,-0.001455,0.012529,0.166881

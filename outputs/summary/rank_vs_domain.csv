@@ -1,0 +1,7 @@
+domain_name,rank,run_count,mean_domain_f1,mean_adaptation_gain,mean_composite_score
+keboola_docs,4,3,0.504565,0.165176,0.521762
+keboola_docs,8,3,0.507694,0.168305,0.542553
+keboola_docs,16,3,0.509867,0.170478,0.555977
+techqa,4,3,0.212013,0.01129,0.339029
+techqa,8,3,0.26227,0.061547,0.628395
+techqa,16,3,0.208657,0.007934,0.315701

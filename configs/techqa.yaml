@@ -1,0 +1,18 @@
+{
+  "data": {
+    "domain": {
+      "name": "techqa",
+      "path": "rojagtap/tech-qa",
+      "question_field": "question",
+      "context_field": "document",
+      "answer_field": "answer",
+      "group_by_field": null,
+      "context_strategy": null,
+      "context_cache_path": "outputs/cache/techqa_context_cache.json",
+      "context_cache_version": "native_context_v1",
+      "prepared_snapshot_path": "outputs/cache/techqa_domain_snapshot.json",
+      "prepared_snapshot_version": "v1_native_context",
+      "prefer_prepared_snapshot": true
+    }
+  }
+}

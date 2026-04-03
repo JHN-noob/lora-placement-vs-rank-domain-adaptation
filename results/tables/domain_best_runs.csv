@@ -1,0 +1,3 @@
+domain_name,best_domain_run,best_domain_f1,best_composite_run,best_composite_score,best_general_run,best_general_acc_weighted
+keboola_docs,all_r16_seed42,0.520788,all_r16_seed42,0.899826,upper_r4_seed42,0.760376
+techqa,techqa_lower_r8_seed42,0.305029,techqa_lower_r8_seed42,0.849439,techqa_all_r8_seed42,0.776038
