@@ -16,10 +16,10 @@ This project compares how LoRA layer placement and rank affect domain adaptation
 
 ## 결론
 - 결과에서는 Keboola와 TechQA에서 최적 LoRA 조합이 서로 다르게 나타났습니다.
-- Keboola 파일럿에서는 `all_r16_seed42`, TechQA 확장에서는 `techqa_lower_r8_seed42`가 가장 높은 domain F1을 보였습니다.
-- rank별 최적 조합도 도메인마다 다르게 나타났고, 이는 데이터 크기, 입력 구조, 문맥 길이 차이의 영향을 받았을 가능성이 있습니다.
-- 평가 범위에서는 catastrophic forgetting의 영향이 거의 없었고, 일부 조합은 base보다 weighted general accuracy가 소폭 좋아졌습니다.
-- 다만 현재 결론은 2개 도메인과 seed 42 기준이므로, 추후 도메인 확장이나 추가 seed 실험으로 재현성을 더 검증할 여지가 있습니다.
+- Keboola 파일럿에서는 `all_r16_seed42`, TechQA 확장에서는 `techqa_lower_r8_seed42`가 가장 높은 Domain F1을 보였습니다.
+- Rank별 최적 조합도 도메인마다 다르게 나타났고 이는 데이터 크기, 입력 구조, 문맥 길이 차이의 영향을 받았을 가능성이 있습니다.
+- 평가 범위에서는 Catastrophic forgetting의 영향이 거의 없었고 일부 조합은 Base보다 Weighted general accuracy가 소폭 좋아졌습니다.
+- 다만 현재 결론은 2개 도메인과 Seed 42 기준이므로 추후 도메인 확장이나 추가 Seed 실험으로 재현성을 더 검증할 여지가 있습니다.
 
 ## 주요 지표 표
 | 단계 | 도메인 | base run | 최고 domain run | domain F1 | adaptation gain | weighted general accuracy | weighted forgetting |
@@ -27,7 +27,7 @@ This project compares how LoRA layer placement and rank affect domain adaptation
 | 파일럿 | keboola_docs | `keboola_base` | `all_r16_seed42` | 0.5208 | 0.1814 | 0.7498 | -0.0008 |
 | 확장 | techqa | `techqa_base` | `techqa_lower_r8_seed42` | 0.3050 | 0.1043 | 0.7664 | -0.0174 |
 
-보조 composite 기준 최고 run도 동일합니다.
+보조 Composite 기준 최고 Run도 동일합니다.
 - Keboola: `all_r16_seed42`
 - TechQA: `techqa_lower_r8_seed42`
 
@@ -79,7 +79,7 @@ project_root/
 - native field: `document`, `question`, `answer`
 - 준비된 스냅샷: `outputs/cache/techqa_domain_snapshot.json`
 
-짧은 context, title-only context, 깨진 문자열이 많은 context는 자동으로 정제하거나 `qa_only`로 강등합니다.
+짧은 Context, Title-only context, 깨진 문자열이 많은 Context는 자동으로 정제하거나 `qa_only`로 강등합니다.
 
 ## 실행 흐름
 프로젝트 루트에서 아래 셀을 먼저 실행합니다.
@@ -147,16 +147,16 @@ bundle
 
 ## 결과 폴더 규칙
 ### 원본 실험 산출물
-- `outputs/runs/`: run별 raw artifact
-- `outputs/summary/`: summary CSV, 이미지, markdown
+- `outputs/runs/`: run별 Raw artifact
+- `outputs/summary/`: Summary CSV, 이미지, Markdown
 
 ### 결과 산출물
-- `results/tables/`: CSV와 summary markdown
+- `results/tables/`: CSV와 Summary markdown
 - `results/figures/`: PNG 이미지
 - `results/RESULTS_OVERVIEW.md`: 핵심 결과 요약 문서
 
-## summary 해석 원칙
-- raw metric을 우선합니다.
+## Summary 해석 원칙
+- Raw metric을 우선합니다.
 - 가장 중요한 표는 `results/tables/runs_summary.csv`입니다.
 - 빠른 요약은 `results/tables/domain_best_runs.csv`와 `results/RESULTS_OVERVIEW.md`를 보면 됩니다.
 - `composite_score`는 보조 지표입니다.
@@ -165,26 +165,26 @@ bundle
   - `WikiText retention`: 0.1
 
 ## 파이프라인 규칙
-- base run 이름은 domain별 canonical name을 사용합니다.
+- Base run 이름은 Domain별 Canonical name을 사용합니다.
   - `keboola_docs -> keboola_base`
   - `techqa -> techqa_base`
-- 비기본 도메인의 adapter run은 자동 생성 시 domain prefix를 붙입니다.
+- 비기본 도메인의 Adapter run은 자동 생성 시 Domain prefix를 붙입니다.
 
 ## 아티팩트 점검 및 정리
 ## 학습 로그 형식
-매 epoch마다 아래 항목이 출력되고 `train_log.jsonl`에도 저장됩니다.
+매 Epoch마다 아래 항목이 출력되고 `train_log.jsonl`에도 저장됩니다.
 - `epoch`
 - `train loss`
 - `val loss`
 - `val acc`
 - `lr`
 
-여기서 `val acc`는 validation domain F1입니다.
+여기서 `val acc`는 Validation domain F1입니다.
 
 ## 참고사항
-- 최신 `transformers`에서는 `dtype`를 우선 사용하고 필요하면 `torch_dtype`로 fallback 합니다.
+- 최신 `transformers`에서는 `dtype`를 우선 사용하고 필요하면 `torch_dtype`로 Fallback 합니다.
 - Hugging Face Hub 기본 설정:
   - `HF_HUB_DISABLE_XET=1`
   - `HF_HUB_DOWNLOAD_TIMEOUT=60`
   - `HF_HUB_ETAG_TIMEOUT=30`
-- `ybisk/piqa`가 최신 `datasets`에서 막히면 공식 원본 파일 URL에서 직접 읽는 fallback 로더를 사용합니다.
+- `ybisk/piqa`가 최신 `datasets`에서 막히면 공식 원본 파일 URL에서 직접 읽는 Fallback 로더를 사용합니다.
