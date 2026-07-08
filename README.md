@@ -109,7 +109,7 @@ freeze_domain_dataset("configs/pilot.yaml")
 freeze_domain_dataset("configs/techqa.yaml")
 ```
 
-### 3. 단일 run 실행
+### 3. 단일 Run 실행
 ```python
 from experiment import prepare_config, build_smoke_overrides, run_experiment
 
@@ -121,7 +121,7 @@ smoke_metrics = run_experiment(smoke_config)
 smoke_metrics
 ```
 
-### 4. batch 실행
+### 4. Batch 실행
 ```python
 from experiment import run_batch
 
@@ -147,7 +147,7 @@ bundle
 
 ## 결과 폴더 규칙
 ### 원본 실험 산출물
-- `outputs/runs/`: run별 Raw artifact
+- `outputs/runs/`: Run별 Raw artifact
 - `outputs/summary/`: Summary CSV, 이미지, Markdown
 
 ### 결과 산출물
