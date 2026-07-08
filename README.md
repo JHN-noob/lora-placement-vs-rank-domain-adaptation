@@ -79,7 +79,7 @@ project_root/
 - Native field: `document`, `question`, `answer`
 - 준비된 스냅샷: `outputs/cache/techqa_domain_snapshot.json`
 
-짧은 Context, Title-only context, 깨진 문자열이 많은 Context는 자동으로 정제하거나 `qa_only`로 강등합니다.
+짧은 Context, title-only context, 깨진 문자열이 많은 context는 자동으로 정제하거나 `qa_only`로 강등합니다.
 
 ## 실행 흐름
 프로젝트 루트에서 아래 셀을 먼저 실행합니다.
@@ -148,7 +148,7 @@ bundle
 ## 결과 폴더 규칙
 ### 원본 실험 산출물
 - `outputs/runs/`: Run별 Raw artifact
-- `outputs/summary/`: Summary CSV, 이미지, Markdown
+- `outputs/summary/`: Summary CSV, 이미지, markdown
 
 ### 결과 산출물
 - `results/tables/`: CSV와 Summary markdown
