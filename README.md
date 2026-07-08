@@ -8,10 +8,10 @@ This project compares how LoRA layer placement and rank affect domain adaptation
 - 기본 모델: `Qwen/Qwen2.5-3B-Instruct`
 - Smoke 모델: `Qwen/Qwen2.5-0.5B-Instruct`
 - 핵심 지표:
-  - `domain F1`
+  - `Domain F1`
   - `BoolQ accuracy`
   - `PIQA accuracy`
-  - `weighted general accuracy`
+  - `Weighted general accuracy`
   - `WikiText perplexity`
 
 ## 결론
@@ -22,7 +22,7 @@ This project compares how LoRA layer placement and rank affect domain adaptation
 - 다만 현재 결론은 2개 도메인과 Seed 42 기준이므로 추후 도메인 확장이나 추가 Seed 실험으로 재현성을 더 검증할 여지가 있습니다.
 
 ## 주요 지표 표
-| 단계 | 도메인 | base run | 최고 domain run | domain F1 | adaptation gain | weighted general accuracy | weighted forgetting |
+| 단계 | 도메인 | Base run | 최고 Domain run | Domain F1 | Adaptation gain | Weighted general accuracy | Weighted forgetting |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: |
 | 파일럿 | keboola_docs | `keboola_base` | `all_r16_seed42` | 0.5208 | 0.1814 | 0.7498 | -0.0008 |
 | 확장 | techqa | `techqa_base` | `techqa_lower_r8_seed42` | 0.3050 | 0.1043 | 0.7664 | -0.0174 |
@@ -76,7 +76,7 @@ project_root/
 
 ### 2차 확장: TechQA
 - 데이터셋: `rojagtap/tech-qa`
-- native field: `document`, `question`, `answer`
+- Native field: `document`, `question`, `answer`
 - 준비된 스냅샷: `outputs/cache/techqa_domain_snapshot.json`
 
 짧은 Context, Title-only context, 깨진 문자열이 많은 Context는 자동으로 정제하거나 `qa_only`로 강등합니다.
