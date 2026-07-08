@@ -1,9 +1,9 @@
 # 요약
 
-- summary 기본 설정에서 smoke/mini run 포함 여부: 제외
-- 집계 대상 run 수: 20
-- domain 수: 2
-- composite score는 보조 지표이며, raw metric과 domain별 base 대비 변화량을 우선 해석합니다.
+- Summary 기본 설정에서 Smoke/mini run 포함 여부: 제외
+- 집계 대상 Run 수: 20
+- Domain 수: 2
+- Composite score는 보조 지표이며 Raw metric과 Domain별 Base 대비 변화량을 우선 해석합니다.
 
 ## Domain Base
 
