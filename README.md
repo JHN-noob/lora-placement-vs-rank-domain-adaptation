@@ -6,7 +6,7 @@ This project compares how LoRA layer placement and rank affect domain adaptation
 - 1차 파일럿 도메인: `Keboola/Developer-Documentation-QA`
 - 2차 확장 도메인: `rojagtap/tech-qa`
 - 기본 모델: `Qwen/Qwen2.5-3B-Instruct`
-- smoke 모델: `Qwen/Qwen2.5-0.5B-Instruct`
+- Smoke 모델: `Qwen/Qwen2.5-0.5B-Instruct`
 - 핵심 지표:
   - `domain F1`
   - `BoolQ accuracy`
