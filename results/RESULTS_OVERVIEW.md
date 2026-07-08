@@ -9,6 +9,6 @@
 
 ## 해석
 
-- 핵심 해석은 raw metric 기준으로 합니다.
-- composite score는 후보를 빠르게 정렬하기 위한 보조 지표입니다.
+- 핵심 해석은 Raw metric 기준으로 합니다.
+- Composite score는 후보를 빠르게 정렬하기 위한 보조 지표입니다.
 - Keboola 파일럿에서는 `all_r16_seed42`가 최고였고, TechQA 확장에서는 `techqa_lower_r8_seed42`가 최고였습니다.
